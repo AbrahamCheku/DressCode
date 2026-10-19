@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#d8d1bd">
+<title> </title>
+<style>
+:root{--forest:#384638;--sage:#788269;--gold:#c6ae7b}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;width:100%}
+body{
+ min-height:100vh;display:grid;place-items:center;padding:clamp(22px,5vw,70px) 18px;
+ overflow-x:hidden;background:
+ radial-gradient(ellipse at 50% 44%,rgba(255,250,239,.95) 0%,rgba(246,237,220,.68) 23%,transparent 48%),
+ radial-gradient(ellipse at 0% 0%,#aeb39b 0%,transparent 37%),
+ radial-gradient(ellipse at 100% 10%,#c4b99b 0%,transparent 35%),
+ radial-gradient(ellipse at 0% 100%,#7e8a70 0%,transparent 39%),
+ radial-gradient(ellipse at 100% 100%,#b58b75 0%,transparent 40%),
+ linear-gradient(135deg,#d5d2bd 0%,#f5ecdc 48%,#d5c8b1 100%);
+ background-attachment:fixed;font-family:Georgia,serif;position:relative
+}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.42;background-image:repeating-linear-gradient(0deg,transparent 0 5px,rgba(255,255,255,.12) 6px,transparent 7px),repeating-linear-gradient(90deg,transparent 0 7px,rgba(76,69,50,.035) 8px,transparent 9px)}
+.leaves{position:fixed;width:clamp(180px,29vw,390px);height:auto;z-index:0;pointer-events:none;filter:drop-shadow(0 10px 15px rgba(42,54,38,.14))}
+.a{top:-28px;left:-35px}.b{right:-35px;bottom:-35px;transform:rotate(174deg)}
+.c{top:-70px;right:-60px;transform:scaleX(-1) rotate(-15deg);opacity:.55;width:clamp(130px,20vw,270px)}
+.d{bottom:-70px;left:-60px;transform:scaleX(-1) rotate(165deg);opacity:.55;width:clamp(130px,20vw,270px)}
+.stage{width:min(100%,660px);position:relative;z-index:1;padding:clamp(12px,2.6vw,23px);background:linear-gradient(145deg,rgba(255,251,241,.83),rgba(235,226,207,.72));border:1px solid rgba(255,249,231,.95);box-shadow:0 35px 90px rgba(43,51,37,.28),0 8px 25px rgba(62,53,37,.14),inset 0 0 0 1px rgba(172,146,99,.42)}
+.stage:before{content:"";position:absolute;inset:7px;border:1px solid rgba(173,147,99,.76);pointer-events:none;z-index:2}
+.stage:after{content:"✦";position:absolute;left:50%;top:-14px;transform:translateX(-50%);display:grid;place-items:center;width:36px;height:28px;background:#e9dfcc;color:#9c875d;font-size:15px;z-index:3}
+.photo{position:relative;padding:clamp(4px,1vw,8px);background:linear-gradient(135deg,#fffdf6,#e9dfcc);box-shadow:0 10px 30px rgba(56,53,40,.13)}
+.photo img{display:block;width:100%;height:auto;position:relative;z-index:1}
+@media(max-width:560px){body{padding:24px 12px}.stage{padding:9px}.stage:before{inset:5px}.a{left:-55px;top:-10px}.b{right:-55px;bottom:-12px}}
+@media(prefers-reduced-motion:no-preference){.stage{animation:arrive .9s cubic-bezier(.2,.7,.2,1) both}@keyframes arrive{from{opacity:0;transform:translateY(18px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}}
+@media print{body{background:#fff;padding:0}.leaves,body:before{display:none}.stage{width:100%;padding:0;box-shadow:none;border:0;background:white}.stage:before,.stage:after{display:none}.photo{padding:0;box-shadow:none}}
+</style>
+</head>
+<body>
+<svg class="leaves a" viewBox="0 0 400 310" aria-hidden="true"><g stroke="#4e6249" stroke-width="2" stroke-linecap="round"><path d="M-15 10 Q95 55 165 145 T390 300" fill="none"/><path d="M22 28 Q48 -3 86 13 Q72 45 35 43Z" fill="#89977a"/><path d="M54 48 Q72 12 111 20 Q99 55 65 64Z" fill="#64765c"/><path d="M87 76 Q110 39 145 50 Q131 82 98 91Z" fill="#a8ae91"/><path d="M124 107 Q159 73 185 94 Q161 120 135 120Z" fill="#5c7054"/><path d="M157 143 Q192 106 220 130 Q193 154 166 157Z" fill="#9ca68a"/><path d="M193 181 Q224 147 253 169 Q230 194 201 195Z" fill="#637558"/><path d="M43 42 Q12 62 12 96 Q48 87 52 50Z" fill="#b0b49a"/><path d="M76 68 Q48 96 58 127 Q89 105 83 76Z" fill="#6e805f"/><path d="M109 99 Q87 130 104 159 Q128 132 116 106Z" fill="#a6ad90"/><path d="M145 133 Q127 164 147 192 Q169 166 153 140Z" fill="#64765c"/><path d="M181 171 Q165 203 189 229 Q209 201 190 179Z" fill="#a4ac8c"/></g><g fill="#d0b98a"><ellipse cx="41" cy="80" rx="5" ry="13" transform="rotate(25 41 80)"/><ellipse cx="128" cy="42" rx="4" ry="12" transform="rotate(33 128 42)"/></g></svg>
+<svg class="leaves c" viewBox="0 0 400 310" aria-hidden="true"><g stroke="#4e6249" stroke-width="2"><path d="M-15 10 Q95 55 165 145 T390 300" fill="none"/><path d="M22 28 Q48 -3 86 13 Q72 45 35 43Z" fill="#89977a"/><path d="M54 48 Q72 12 111 20 Q99 55 65 64Z" fill="#64765c"/><path d="M87 76 Q110 39 145 50 Q131 82 98 91Z" fill="#a8ae91"/><path d="M124 107 Q159 73 185 94 Q161 120 135 120Z" fill="#5c7054"/></g></svg>
+<svg class="leaves d" viewBox="0 0 400 310" aria-hidden="true"><g stroke="#4e6249" stroke-width="2"><path d="M-15 10 Q95 55 165 145 T390 300" fill="none"/><path d="M22 28 Q48 -3 86 13 Q72 45 35 43Z" fill="#89977a"/><path d="M54 48 Q72 12 111 20 Q99 55 65 64Z" fill="#64765c"/><path d="M87 76 Q110 39 145 50 Q131 82 98 91Z" fill="#a8ae91"/></g></svg>
+<svg class="leaves b" viewBox="0 0 400 310" aria-hidden="true"><g stroke="#4e6249" stroke-width="2"><path d="M-15 10 Q95 55 165 145 T390 300" fill="none"/><path d="M22 28 Q48 -3 86 13 Q72 45 35 43Z" fill="#89977a"/><path d="M54 48 Q72 12 111 20 Q99 55 65 64Z" fill="#64765c"/><path d="M87 76 Q110 39 145 50 Q131 82 98 91Z" fill="#a8ae91"/><path d="M124 107 Q159 73 185 94 Q161 120 135 120Z" fill="#5c7054"/></g></svg>
+<main class="stage"><div class="photo"><img src="./colores-boda.png" alt="Colores prohibidos para la boda de Leyla y Alan"></div></main>
+</body>
+</html>
