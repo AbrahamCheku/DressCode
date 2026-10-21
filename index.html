@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f5f0e7">
+<title>Leyla & Alan · Guía de colores</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&family=Italiana&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f6f1e8; --ink:#2c3028; --muted:#737365; --rust:#8c4c41;
+  --olive:#68715a; --line:#d5caba; --gold:#a58a5d; --card:#fbf8f2;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; color:var(--ink); background:var(--paper);
+  font-family:"DM Sans",sans-serif; overflow-x:hidden;
+  background-image:radial-gradient(ellipse at 50% 0%,rgba(255,255,255,.8),transparent 55%);
+}
+button{font:inherit}
+.page{max-width:1180px; margin:auto; padding:30px 28px 55px; position:relative}
+.botanical{position:absolute; width:clamp(125px,22vw,270px); opacity:.82; pointer-events:none; z-index:0; filter:saturate(.72)}
+.botanical.top-left{top:0;left:0;transform:rotate(0deg)}
+.botanical.top-right{top:0;right:0;transform:scaleX(-1) rotate(0deg)}
+.botanical.bottom-left{bottom:0;left:0;transform:scaleY(-1) rotate(0deg)}
+.botanical.bottom-right{bottom:0;right:0;transform:scale(-1)}
+.hero,.content,.footer{position:relative;z-index:1}
+.hero{text-align:center; padding:34px 12px 32px}
+.names{font-family:"DM Sans",sans-serif; font-size:.78rem; text-transform:uppercase; letter-spacing:.42em; margin:0 0 20px  .42em; font-weight:500}
+.flourish{display:flex;align-items:center;justify-content:center;gap:16px;margin:0 auto 24px;color:var(--olive)}
+.flourish:before,.flourish:after{content:"";height:1px;width:clamp(45px,15vw,150px);background:var(--line)}
+.flourish span{font-size:1.7rem;line-height:1;transform:rotate(-20deg)}
+.kicker{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--olive);margin:0 0 12px}
+h1{font-family:"Italiana","Cormorant Garamond",serif;font-weight:400;text-transform:uppercase;letter-spacing:-.035em;font-size:clamp(3.2rem,9vw,7.3rem);line-height:.79;color:var(--rust);margin:0 auto 28px}
+h1 span{display:block}
+.intro{font-family:"Cormorant Garamond",serif;font-size:clamp(1.3rem,3vw,2rem);line-height:1.35;max-width:720px;margin:0 auto;color:#3d4038}
+.intro em{color:var(--rust);font-style:normal}
+.hint{display:inline-flex;align-items:center;gap:8px;margin:24px auto 0;color:var(--muted);font-size:.72rem;letter-spacing:.09em;text-transform:uppercase}
+.hint i{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--gold);animation:pulse 1.8s infinite}
+@keyframes pulse{0%,100%{opacity:.45;transform:scale(.85)}50%{opacity:1;transform:scale(1.2)}}
+.section-head{text-align:center;margin:18px 0 25px}
+.section-head .small{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--olive);margin:0 0 7px}
+.section-head h2{font-family:"Cormorant Garamond",serif;font-size:clamp(1.7rem,4vw,2.4rem);font-weight:500;margin:0;line-height:1.05}
+.color-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:17px}
+.color-card{
+  position:relative;text-align:center;padding:19px 15px 22px;border:1px solid rgba(194,180,158,.68);
+  border-radius:150px 150px 18px 18px;background:rgba(255,252,246,.56);
+  transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s,border-color .35s,background .35s;
+  overflow:hidden; isolation:isolate;
+}
+.color-card:before{content:"";position:absolute;inset:0;background:linear-gradient(155deg,rgba(255,255,255,.65),transparent 55%);opacity:.7;z-index:-1;transition:opacity .35s}
+.color-card:hover,.color-card:focus-within{transform:translateY(-9px);box-shadow:0 20px 38px rgba(70,58,41,.12);border-color:#b5a184;background:#fffdf8}
+.color-card:hover:before{opacity:1}
+.swatch-wrap{width:min(100%,170px);aspect-ratio:1;margin:0 auto 18px;position:relative;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.color-card:hover .swatch-wrap{transform:scale(1.055) rotate(-2deg)}
+.swatch{position:absolute;inset:0;border-radius:50%;border:1px solid rgba(91,67,51,.32);box-shadow:inset 0 0 22px rgba(255,255,255,.15),0 7px 16px rgba(48,39,28,.06)}
+.swatch:after{content:"";position:absolute;left:-5%;top:49%;width:110%;height:3px;background:#963c35;transform:rotate(46deg);border-radius:4px;box-shadow:0 0 0 1px rgba(255,255,255,.2)}
+.swatch:before{content:"";position:absolute;left:50%;top:50%;width:1px;height:145%;background:rgba(255,255,255,.28);transform:translate(-50%,-50%) rotate(46deg)}
+.white{background:#fffdfb}.beige{background:#dfc7ad}.red{background:#a4312f}.light{background:#e4e0d7}
+.number{font-size:.63rem;letter-spacing:.2em;color:var(--gold);margin-bottom:7px}
+.color-card h3{font-family:"Cormorant Garamond",serif;font-size:1.5rem;font-weight:600;line-height:1.02;margin:0 0 10px}
+.color-card p{font-size:.79rem;line-height:1.55;color:var(--muted);margin:0 auto;max-width:190px}
+.hover-note{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--rust);margin-top:15px;opacity:0;transform:translateY(5px);transition:opacity .3s,transform .3s}
+.color-card:hover .hover-note,.color-card:focus-within .hover-note{opacity:1;transform:translateY(0)}
+.bottom-flourish{margin:38px auto 23px}
+.closing{max-width:720px;text-align:center;margin:0 auto;padding:25px 22px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.closing .quote{font-family:"Cormorant Garamond",serif;font-size:clamp(1.25rem,3vw,1.75rem);line-height:1.35;margin:0}
+.closing strong{font-weight:500;color:var(--rust)}
+.footer{text-align:center;margin-top:25px}
+.footer p{font-size:.66rem;letter-spacing:.25em;text-transform:uppercase;color:var(--muted);margin:0}
+.footer .heart{display:block;color:var(--rust);font-size:1rem;margin-top:8px}
+@media(max-width:760px){
+ .page{padding:20px 17px 38px}
+ .hero{padding:40px 5px 28px}
+ .botanical{width:clamp(105px,25vw,175px);opacity:.65}
+ .color-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ .color-card{padding:18px 10px 19px;border-radius:120px 120px 16px 16px}
+ .swatch-wrap{width:min(82%,145px);margin-bottom:14px}
+ .color-card h3{font-size:1.4rem}
+ .color-card p{font-size:.75rem}
+ .hover-note{opacity:1;transform:none;margin-top:11px;font-size:.56rem}
+}
+@media(max-width:380px){
+ .color-grid{gap:8px}
+ .color-card{padding:14px 7px 16px}
+ .swatch-wrap{width:88%}
+ .color-card h3{font-size:1.25rem}
+ .color-card p{font-size:.7rem}
+ .names{letter-spacing:.28em}
+}
+@media(hover:none){.hover-note{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<main class="page">
+  <svg class="botanical top-left" viewBox="0 0 260 260" aria-hidden="true"><g fill="#77816b"><path d="M4 8C70 20 105 78 146 144 92 118 41 72 4 8Z"/><path d="M15 28C74 27 121 49 171 91 116 86 63 64 15 28Z"/><path d="M37 65C85 61 133 75 184 112 131 108 82 93 37 65Z"/><path d="M60 105C105 94 151 107 204 140 151 140 103 128 60 105Z"/><path d="M89 142C131 130 177 143 224 171 178 176 130 164 89 142Z"/></g><g fill="#b4a27f"><path d="M4 8C34 72 72 120 146 144 97 108 54 60 4 8Z"/><path d="M15 28C70 42 118 63 171 91 122 78 67 48 15 28Z"/></g><path d="M0 0C48 42 90 90 146 144" fill="none" stroke="#5c6752" stroke-width="2"/></svg>
+  <svg class="botanical top-right" viewBox="0 0 260 260" aria-hidden="true"><g fill="#77816b"><path d="M4 8C70 20 105 78 146 144 92 118 41 72 4 8Z"/><path d="M15 28C74 27 121 49 171 91 116 86 63 64 15 28Z"/><path d="M37 65C85 61 133 75 184 112 131 108 82 93 37 65Z"/><path d="M60 105C105 94 151 107 204 140 151 140 103 128 60 105Z"/><path d="M89 142C131 130 177 143 224 171 178 176 130 164 89 142Z"/></g><g fill="#b4a27f"><path d="M4 8C34 72 72 120 146 144 97 108 54 60 4 8Z"/><path d="M15 28C70 42 118 63 171 91 122 78 67 48 15 28Z"/></g><path d="M0 0C48 42 90 90 146 144" fill="none" stroke="#5c6752" stroke-width="2"/></svg>
+  <svg class="botanical bottom-left" viewBox="0 0 260 260" aria-hidden="true"><g fill="#77816b"><path d="M4 8C70 20 105 78 146 144 92 118 41 72 4 8Z"/><path d="M15 28C74 27 121 49 171 91 116 86 63 64 15 28Z"/><path d="M37 65C85 61 133 75 184 112 131 108 82 93 37 65Z"/><path d="M60 105C105 94 151 107 204 140 151 140 103 128 60 105Z"/><path d="M89 142C131 130 177 143 224 171 178 176 130 164 89 142Z"/></g><path d="M0 0C48 42 90 90 146 144" fill="none" stroke="#5c6752" stroke-width="2"/></svg>
+  <svg class="botanical bottom-right" viewBox="0 0 260 260" aria-hidden="true"><g fill="#77816b"><path d="M4 8C70 20 105 78 146 144 92 118 41 72 4 8Z"/><path d="M15 28C74 27 121 49 171 91 116 86 63 64 15 28Z"/><path d="M37 65C85 61 133 75 184 112 131 108 82 93 37 65Z"/><path d="M60 105C105 94 151 107 204 140 151 140 103 128 60 105Z"/><path d="M89 142C131 130 177 143 224 171 178 176 130 164 89 142Z"/></g><path d="M0 0C48 42 90 90 146 144" fill="none" stroke="#5c6752" stroke-width="2"/></svg>
+
+  <header class="hero">
+    <p class="names">Leyla <span style="color:var(--gold)">&amp;</span> Alan</p>
+    <div class="flourish" aria-hidden="true"><span>❧</span></div>
+    <p class="kicker">Nuestra celebración · Dress code</p>
+    <h1><span>Colores</span><span>prohibidos</span></h1>
+    <p class="intro">Para conservar la armonía y la estética de nuestra boda, te pedimos con mucho cariño <em>evitar estos tonos</em>.</p>
+    <div class="hint"><i></i> Pasa el cursor sobre cada color</div>
+  </header>
+
+  <section class="content">
+    <div class="section-head">
+      <p class="small">Una pequeña guía para nuestros invitados</p>
+      <h2>Colores que preferimos reservar</h2>
+    </div>
+    <div class="color-grid">
+      <article class="color-card" tabindex="0">
+        <div class="swatch-wrap"><div class="swatch white"></div></div>
+        <div class="number">01 / TONOS CLAROS</div>
+        <h3>Blancos</h3>
+        <p>Blanco puro y cualquier tono que se acerque demasiado a él.</p>
+        <div class="hover-note">Mejor evitar</div>
+      </article>
+      <article class="color-card" tabindex="0">
+        <div class="swatch-wrap"><div class="swatch beige"></div></div>
+        <div class="number">02 / NEUTROS</div>
+        <h3>Beige, marfil<br>y crema</h3>
+        <p>Incluye los tonos cálidos muy claros y similares.</p>
+        <div class="hover-note">Mejor evitar</div>
+      </article>
+      <article class="color-card" tabindex="0">
+        <div class="swatch-wrap"><div class="swatch red"></div></div>
+        <div class="number">03 / TONOS INTENSOS</div>
+        <h3>Rojo</h3>
+        <p>Rojo y tonalidades muy similares.</p>
+        <div class="hover-note">Mejor evitar</div>
+      </article>
+      <article class="color-card" tabindex="0">
+        <div class="swatch-wrap"><div class="swatch light"></div></div>
+        <div class="number">04 / TONOS PÁLIDOS</div>
+        <h3>Colores muy claros</h3>
+        <p>Cualquier color que en las fotografías pueda parecer blanco.</p>
+        <div class="hover-note">Mejor evitar</div>
+      </article>
+    </div>
+    <div class="flourish bottom-flourish" aria-hidden="true"><span>❧</span></div>
+    <div class="closing">
+      <p class="quote">Queremos que te sientas increíble y disfrutes cada instante con nosotros. Gracias por ayudarnos a cuidar <strong>la magia de este día.</strong></p>
+    </div>
+  </section>
+  <footer class="footer"><p>Con cariño, Leyla &amp; Alan</p><span class="heart">✦</span></footer>
+</main>
+</body>
+</html>
